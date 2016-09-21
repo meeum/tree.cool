@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0"></head>
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+	<title>tree.cool</title>
+	<style>
+
+	* {
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+
+	}
+	img {
+		max-width:100%;
+		height:auto;
+	}
+	html,
+	body {
+	    height: 100%;
+	    width: 100%;
+	    padding: 0;
+	    margin: 0;
+	    overflow: hidden;
+	    background:#222;
+	    font-family:arial;
+	    color:#f0f0f0;
+	}
+	.frame {
+		position: relative;
+		max-width: 100%;
+		width:500px;
+		height:500px;
+		
+		margin:5% auto;
+	}
+	.frame-pic {
+		position: absolute;
+	}
+	.flexslider {
+		/*width:306px;*/
+		max-width: 100%;
+		border:none;
+		background:transparent;
+		position: absolute;
+		/*top:19%;
+		left:20%;*/
+		padding:19%;
+	}
+	ul {
+		list-style: none;
+	}
+
+	.carousel li {
+		
+		margin:0px;
+				
+	}
+	.flexslider .slides {
+		
+	}
+	.flexslider .slides img {
+		width:306px;
+		max-width:100%;
+		
+
+	}
+	a {
+		display: block;
+	}
+
+	h1 {
+		text-align: center;
+		width: 100%;
+	}
+
+	</style>
+<body class="loading"> 
+	
+<div class="frame">
+	<img class="frame-pic" src="images/frame.png" alt="">
+	<div class="flexslider carousel">
+		
+		<ul id="instafeed" class="slides"></ul>
+	</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+	<script src="js/instafeed.min.js"></script>
+
+
+	<script type="text/javascript">
+	    var feed = new Instafeed({
+	    	get: 'user',
+	        userId: 31338044,
+	        clientId: '41119b6e9c5944708fc0788ce7b0deaa',
+	        accessToken: '31338044.467ede5.a10a73236ff848cc89d5c7b4397d9e5e',
+	        limit: 500,
+	    	target: 'instafeed',
+	        resolution: 'low_resolution',
+	        links:true,
+	        sortBy:'most-recent',
+	        template: '<li><a href="{{link}}"><img src="{{image}}"><span>{{date}}</span></a></li>',
+	        filter: function(image) {
+			  var foundTag = false, tags = image.tags;
+			 
+			  for(var i=0,len=tags.length; i<len && !foundTag; i++) {
+			    if (tags[i] === 'tree') foundTag = true;
+			  };
+			 
+			  return foundTag;
+			}
+	    });
+	    feed.run();
+	</script>
+
+
+	<script defer src="js/jquery.flexslider-min.js"></script>
+	<script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "fade",
+        animationLoop: false,
+        slideshowSpeed: 1000, 
+        animationLoop: true,  
+        //itemWidth: 210,
+        //itemMargin: 5,
+        pausePlay: true,
+        controlNav: false, 
+        directionNav: false,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+
+
+
+
+</body>
+</html>
