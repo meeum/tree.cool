@@ -1,137 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0"></head>
-	<!-- <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" /> -->
-	<title>tree.cool</title>
-	<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+</head>
+<body>
+    <h1>Tree</h1>
+    <div id="instafeed"></div>
 
-	* {
-		-webkit-box-sizing:border-box;
-		-moz-box-sizing:border-box;
-		box-sizing:border-box;
-
-	}
-	img {
-		max-width:100%;
-		height:auto;
-		width: 300px;
-		
-
-	}
-	html,
-	body {
-	    height: 100%;
-	    width: 100%;
-	    padding: 0;
-	    margin: 0;
-	
-	    background:#222;
-	    font-family:arial;
-	    color:#f0f0f0;
-	}
-
-	ul {
-		list-style: none;
-	}
-	li {
-		float: left;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		height: 300px;
-		width: 300px;
-		overflow: hidden;
-	}
-	/* .frame {
-		position: relative;
-		max-width: 100%;
-		width:500px;
-		height:500px;
-		
-		margin:5% auto;
-	}
-	.frame-pic {
-		position: absolute;
-	}
-	.flexslider {
-		
-		max-width: 100%;
-		border:none;
-		background:transparent;
-		position: absolute;
-		
-		padding:19%;
-	}
-	ul {
-		list-style: none;
-	}
-
-	.carousel li {
-		
-		margin:0px;
-				
-	}
-	.flexslider .slides {
-		
-	}
-	.flexslider .slides img {
-		width:306px;
-		max-width:100%;
-		
-
-	}
-	a {
-		display: block;
-	}
-
-	h1 {
-		text-align: center;
-		width: 100%;
-	} */
-
-	</style>
-<body class="loading"> 
-
-		
-	
-<div id="insta-feed"></div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-	<script src="js/ig.js"></script>
-
-
-	
-
-
-	<script defer src="js/jquery.flexslider-min.js"></script>
-
-	<!-- <script type="text/javascript">
-		$(function(){
-		  //SyntaxHighlighter.all();
-		});
-		$(window).load(function(){
-		  $('.flexslider').flexslider({
-			animation: "fade",
-			animationLoop: false,
-			slideshowSpeed: 3000, 
-			animationLoop: true,  
-			//itemWidth: 210,
-			//itemMargin: 5,
-			pausePlay: true,
-			controlNav: false, 
-			directionNav: false,
-			start: function(slider){
-			  $('body').removeClass('loading');
-			}
-		  });
-		});
-	  </script>
-	 -->
-
-
-
-
+    <script src="assets/js/instafeed.js"></script>
+    <script type="text/javascript">
+        var feed = new Instafeed({
+            get: 'tagged',
+            tagName: 'tree',
+            clientId: '7bf166c9ca9943f79e8c2f531c1b1a47'
+        });
+        feed.run();
+    </script>
+ 
 </body>
 </html>
