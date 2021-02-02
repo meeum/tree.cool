@@ -1,0 +1,1 @@
+sitemap:http://tree.cool/_old/css/style/theme/upload/temp/temp/sitemap.xml
